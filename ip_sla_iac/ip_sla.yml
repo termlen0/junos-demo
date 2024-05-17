@@ -7,7 +7,7 @@
 
   tasks:
     - name: ENSURE THAT CISCO SNMP CONFIGS ARE ABSENT
-      ios_config:
+      cisco.ios.ios_config:
         src: ios_ip_sla.j2
       ignore_errors: True
 
@@ -24,6 +24,6 @@
 
   tasks:
     - name: ENSURE THAT CISCO SNMP CONFIGS ARE ABSENT
-      ios_config:
+      cisco.ios.ios_config:
         src: ios_ip_sla_rollback.j2
       ignore_errors: True
