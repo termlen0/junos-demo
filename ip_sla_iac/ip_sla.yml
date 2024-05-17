@@ -2,7 +2,7 @@
 - name: IP SLA DEPLOY
   hosts: cisco
   gather_facts: no
-  vars_files: ipsla.cfg
+  vars_files: ipsla_cfg.yml
   tags: deploy        
 
   tasks:
@@ -19,7 +19,7 @@
 - name: IP SLA ROLLBACK
   hosts: cisco
   gather_facts: no
-  vars_files: ipsla.cfg
+  vars_files: ipsla_cfg.yml
   tags: rollback        
 
   tasks:
