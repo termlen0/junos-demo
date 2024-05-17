@@ -14,7 +14,7 @@
     - name: Fail play - to demo rollback
       ansible.builtin.fail:
         msg: "Emulates a failure"
-      when: sla_fail is True
+      when: sla_fail| bool
 
 - name: IP SLA ROLLBACK
   hosts: cisco
