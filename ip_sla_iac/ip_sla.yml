@@ -1,0 +1,29 @@
+---
+- name: IP SLA DEPLOY
+  hosts: cisco
+  gather_facts: no
+  vars_files: ipsla.cfg
+  tags: deploy        
+
+  tasks:
+    - name: ENSURE THAT CISCO SNMP CONFIGS ARE ABSENT
+      ios_config:
+        src: ios_ip_sla.j2
+      ignore_errors: True
+
+    - name: Fail play - to demo rollback
+      ansible.builtin.fail:
+        msg: "Emulates a failure"
+      when: sla_fail is True
+
+- name: IP SLA ROLLBACK
+  hosts: cisco
+  gather_facts: no
+  vars_files: ipsla.cfg
+  tags: rollback        
+
+  tasks:
+    - name: ENSURE THAT CISCO SNMP CONFIGS ARE ABSENT
+      ios_config:
+        src: ios_ip_sla_rollback.j2
+      ignore_errors: True
