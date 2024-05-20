@@ -1,8 +1,8 @@
-ip sla {{ ip_sla.r1r2.sla_seq }}
- icmp-echo {{ ip_sla.r1r2.sla_dest }} source-interface GigabitEthernet1
-  threshold {{ ip_sla.r1r2.threshold }}
-  timeout {{ ip_sla.r1r2.timeout }}
-  frequency {{ ip_sla.r1r2.frequency }}
-ip sla schedule {{ip_sla.r1r2.sla_seq }} life forever start-time now
+ip sla {{ sla_seq }}
+ icmp-echo {{ sla_dest }} source-interface GigabitEthernet1
+  threshold {{ threshold }}
+  timeout {{ timeout }}
+  frequency {{ frequency }}
+ip sla schedule {{ sla_seq }} life forever start-time now
 
-track {{ ip_sla.r1r2.track_seq }} ip sla {{ ip_sla.r1r2.sla_seq }} state
+track {{ track_seq }} ip sla {{ sla_seq }} state

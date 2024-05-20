@@ -1,0 +1,7 @@
+sla_seq: 3
+sla_type: icmp-echo
+sla_dest: 172.18.0.1
+threshold: 1000
+timeout: 1000
+frequency: 1
+track_seq: 3
