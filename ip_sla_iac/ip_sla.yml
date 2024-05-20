@@ -6,7 +6,7 @@
   tags: deploy        
 
   tasks:
-    - name: ENSURE THAT CISCO SNMP CONFIGS ARE ABSENT
+    - name: ENSURE THAT CISCO IP SLA IS DEPLOYED 
       cisco.ios.ios_config:
         src: ios_ip_sla.j2
       ignore_errors: True
